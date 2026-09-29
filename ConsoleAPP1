@@ -1,0 +1,33 @@
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Zadajte sumu");
+            int suma = int.Parse(Console.ReadLine());
+
+            int a=suma/100;
+            suma=suma%100;
+
+            int b=suma/50;
+            suma=suma % 50;
+
+            int c=suma/20;
+            suma=suma%20;
+
+            int d=suma/10;
+            suma=suma%10;
+
+            int e=suma/5;
+            suma=suma % 5;
+
+            int f=suma/2;
+            suma=suma%2;
+
+            int g=suma/1;
+            suma=suma % 1;
+
+            Console.WriteLine("100 eur: " + a + ", 50 eur: " + b + ", 20 eur: " + c + ", 10 eur: " + d + ", 5 eur: " + e + ", 2 eura: " + f + ", 1 euro: " + g);
+        }
+    }
+}
