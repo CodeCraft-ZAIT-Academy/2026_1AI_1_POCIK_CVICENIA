@@ -1,33 +1,145 @@
+using System.Numerics;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zadajte sumu");
-            int suma = int.Parse(Console.ReadLine());
+            //Console.WriteLine("What is your name?");
+            //string meno = Console.ReadLine();
+            //Console.WriteLine("Think of a random character.");
+            //string postava = Console.ReadLine();
+            //Console.WriteLine("Now think of a random animal.");
+            //string zviera = Console.ReadLine();
+            //Console.WriteLine(postava +" " + meno + " was attacked by " + zviera);
 
-            int a=suma/100;
-            suma=suma%100;
+            //int vek = 15;
+            //string meno = "George";
+            //Console.WriteLine("My name is " + meno + " and I am " + vek + " years old.");
 
-            int b=suma/50;
-            suma=suma % 50;
+            //int a = 1;
+            //Console.WriteLine(a);
+            //a = a + 10;
+            //Console.WriteLine(a);
 
-            int c=suma/20;
-            suma=suma%20;
 
-            int d=suma/10;
-            suma=suma%10;
+            //Console.WriteLine("Meno");
+            //string meno = Console.ReadLine();
+            //Console.WriteLine("Priezvisko");
+            //string priezvisko = Console.ReadLine();
+            //string celeMeno = meno + " " + priezvisko;
+            //Console.WriteLine("Ahoj " + celeMeno + "!");
 
-            int e=suma/5;
-            suma=suma % 5;
+            //int a = 5;
+            //int b = 10;
+            //int c = b;
+            //b = a;
+            //a = c;
+            //Console.WriteLine("a= " + a);
+            //Console.WriteLine("b= " + b);
 
-            int f=suma/2;
-            suma=suma%2;
+            //Console.WriteLine("Meno");
+            //string meno = Console.ReadLine();
+            //Console.WriteLine("Rok narodenia");
+            //int a = int.Parse(Console.ReadLine());
+            //a = 2026 - a;
+            //Console.WriteLine("Ahoj " + meno + "! Mas " + a + " rokov.");
 
-            int g=suma/1;
-            suma=suma % 1;
 
-            Console.WriteLine("100 eur: " + a + ", 50 eur: " + b + ", 20 eur: " + c + ", 10 eur: " + d + ", 5 eur: " + e + ", 2 eura: " + f + ", 1 euro: " + g);
+
+
+
+            //Console.WriteLine("Strana a");
+            //int a = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Strana b");
+            //int b = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Plocha = " + a*b);
+
+            //Console.WriteLine("Strana a");
+            //int a = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Strana b");
+            //int b = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Obvod = " + 2*(a+b));
+
+            //Console.WriteLine("Minuty na sekundy");
+            //int a = int.Parse(Console.ReadLine());
+            //Console.WriteLine(a + " minút je " + a*60 + " sekúnd");
+
+            //Console.WriteLine("Pocet dni na sekundy");
+            //int a = int.Parse(Console.ReadLine());
+            //int vysledok = a*24*60*60;
+            //int vysledok2 = a/365;
+            //Console.WriteLine(a + " dni je " + vysledok + " sekúnd");
+            //Console.WriteLine(a + " dni je " + vysledok2 + " rokov");
+
+            //EXTRA
+
+            //Console.WriteLine("Zadaj znamku 1. ziaka");
+            //int z1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Zadaj znamku 2. ziaka");
+            //int z2 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Zadaj znamku 3. ziaka");
+            //int z3 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Zadaj znamku 4. ziaka");
+            //int z4 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Zadaj znamku 5. ziaka");
+            //int z5 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Priemer ziakov je: " + (z1 + z2 + z3 + z4 + z5) / 5.0);
+
+            //Console.WriteLine("Spotreba auta v litroch");
+            //double spotreba = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Ujdena vzdialenost v km");
+            //double vzdialenost = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Cena benzinku za liter");
+            //double cena = double.Parse(Console.ReadLine());
+            //double vysledok = (vzdialenost / spotreba) * cena;
+            //Console.WriteLine("Cena cesty: " + vysledok);
+
+
+
+            //Console.WriteLine("Aku sumu v eurach checes vydat?");
+            //int h1 = int.Parse(Console.ReadLine());
+            //int h2 = h1 / 100;
+            //int h3 = h1 % 100 / 50;
+            //int h4 = h1 % 100 % 50 / 20;
+            //int h5 = h1 % 100 % 50 % 20 / 10;
+            //int h6 = h1 % 100 % 50 % 20 % 10 / 5;
+            //int h7 = h1 % 100 % 50 % 20 % 10 % 5 / 2;
+            //int h8 = h1 % 100 % 50 % 20 % 10 % 5 % 2;
+            //Console.WriteLine("Pocet 100€ bankoviek: " + h2);
+            //Console.WriteLine("Pocet 50€ bankoviek: " + h3);
+            //Console.WriteLine("Pocet 20€ bankoviek: " + h4);
+            //Console.WriteLine("Pocet 10€ bankoviek: " + h5);
+            //Console.WriteLine("Pocet 5€ bankoviek: " + h6);
+            //Console.WriteLine("Pocet 2€ bankoviek: " + h7);
+            //Console.WriteLine("Pocet 1€ bankoviek: " + h8);
+
+            Console.WriteLine("Aku sumu v eurach checes vydat?");
+            int h = int.Parse(Console.ReadLine());
+            int h1 = h / 100;
+            h %= 100;
+            int h2 = h / 50;
+            h %= 50;
+            int h3 = h / 20;
+            h %= 20;
+            int h4 = h / 10;
+            h %= 10;
+            int h5 = h / 5;
+            h %= 5;
+            int h6 = h / 2;
+            h %= 2;
+            int h7 = h;
+            Console.WriteLine("Pocet 100€ bankoviek: " + h1);
+            Console.WriteLine("Pocet 50€ bankoviek: " + h2);
+            Console.WriteLine("Pocet 20€ bankoviek: " + h3);
+            Console.WriteLine("Pocet 10€ bankoviek: " + h4);
+            Console.WriteLine("Pocet 5€ bankoviek: " + h5);
+            Console.WriteLine("Pocet 2€ bankoviek: " + h6);
+            Console.WriteLine("Pocet 1€ bankoviek: " + h7);
         }
     }
 }
+
+
+
