@@ -1,0 +1,35 @@
+using System.Security.Cryptography.X509Certificates;
+
+namespace _2026_1AI_1_POVCIK_CVICENIA
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+
+            Console.WriteLine("Zadajte číslo");
+            int cislo = int.Parse(Console.ReadLine());
+
+
+            Random random = new Random();
+            int generatedNumber = random.Next(1, 11);
+            Console.WriteLine(generatedNumber);
+            if (cislo == generatedNumber)
+            {
+                Console.WriteLine("Gratulujem, uhádol si číslo!");
+            }
+            else
+            {
+                Console.WriteLine("Bohužiaľ, neuhádol si číslo. Skús to znova.");
+
+
+            }
+            }
+      }
+}
+
+
+
+
+
