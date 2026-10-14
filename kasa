@@ -1,0 +1,81 @@
+using System.ComponentModel;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp2
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public double FinalPriceOfCart { get; set; } = 0.0;
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            double rozokPrice = 0.2;
+            FinalPriceOfCart += rozokPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Rozok: " + rozokPrice);
+
+          
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            double kofolaPrice = 2;
+            FinalPriceOfCart  += kofolaPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Rozok: " + kofolaPrice);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            double jablkoPrice = 1;
+            FinalPriceOfCart  += jablkoPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Rozok: " + jablkoPrice);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            FinalPriceOfCart = 0;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Clear();
+
+        }
+
+        private void ListView_ElementInCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            FinalPriceOfCart = 0;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Clear();
+            
+        }
+    }
+}
