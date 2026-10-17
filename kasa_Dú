@@ -1,0 +1,220 @@
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp5
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public double FinalPriceOfCart { get; set; } = 0.0;
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+      
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            double kofolaPrice = 5;
+            FinalPriceOfCart += kofolaPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Kofola: " + kofolaPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            double rozokPrice = 1;
+            FinalPriceOfCart += rozokPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Rozok: " + rozokPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            double jablkoPrice = 2;
+            FinalPriceOfCart += jablkoPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Jablko: " + jablkoPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            FinalPriceOfCart = 0;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Clear();
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+        }
+
+        private void ListView_ElementInCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            double rozokPrice = 1;
+            FinalPriceOfCart += rozokPrice; 
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Rozok: " + rozokPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            double rozokPrice = 1;
+            FinalPriceOfCart -= rozokPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Remove("Rozok: " + rozokPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+            if (FinalPriceOfCart < 0)
+            {
+                FinalPriceOfCart = 0;
+                Label_PriceIndicator.Content = FinalPriceOfCart;
+                Label_Zobrazovac.Content = FinalPriceOfCart;
+            }
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            double kofolaPrice = 5;
+            FinalPriceOfCart += kofolaPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Kofola: " + kofolaPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            double kofolaPrice = 5;
+            FinalPriceOfCart -= kofolaPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Remove("Kofola: " + kofolaPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+            if (FinalPriceOfCart < 0)
+            {
+                FinalPriceOfCart = 0;
+                Label_PriceIndicator.Content = FinalPriceOfCart;
+                Label_Zobrazovac.Content = FinalPriceOfCart;
+            }
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            double jablkoPrice  = 2;
+            FinalPriceOfCart += jablkoPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Add("Jablko: " + jablkoPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            double jablkoPrice = 2;
+            FinalPriceOfCart -= jablkoPrice;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Remove("Jablko: " + jablkoPrice);
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+
+            if (FinalPriceOfCart < 0)
+            {
+                FinalPriceOfCart = 0;
+                Label_PriceIndicator.Content = FinalPriceOfCart;
+                Label_Zobrazovac.Content = FinalPriceOfCart;
+            }
+
+
+
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Finálna cena je: " + FinalPriceOfCart);
+            FinalPriceOfCart = 0;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Clear();
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            double tip = FinalPriceOfCart * 5 / 100;
+            MessageBox.Show("Finálna cena s 5% tipom je: " + (FinalPriceOfCart + tip));
+            FinalPriceOfCart = 0;
+            Label_PriceIndicator.Content = FinalPriceOfCart;
+            Label_Zobrazovac.Content = FinalPriceOfCart;
+            ListView_ElementInCart.Items.Clear();
+
+        }
+    }
+}
+<Window x:Class="WpfApp5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid RenderTransformOrigin="0.501,0.443">
+        <Button Content="kofola" HorizontalAlignment="Left" Margin="151,137,0,0" VerticalAlignment="Top" Click="Button_Click_1" RenderTransformOrigin="0.514,0.602" Height="44" Width="100"/>
+        <Label x:Name="Label_PriceIndicator" Content="_ _ _ _ " HorizontalAlignment="Left" Margin="496,163,0,0" VerticalAlignment="Top"/>
+        <Button Content="Rozok" HorizontalAlignment="Left" Margin="151,84,0,0" VerticalAlignment="Top" Click="Button_Click" Height="48" Width="100"/>
+        <Button Content="jablko" HorizontalAlignment="Left" Margin="151,186,0,0" VerticalAlignment="Top" Click="Button_Click_2" Height="49" Width="100"/>
+        <Button Content="reset" HorizontalAlignment="Left" Margin="418,169,0,0" VerticalAlignment="Top" Click="Button_Click_3" Width="67"/>
+        <ListView x:Name="ListView_ElementInCart" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="654,12,19,199" SelectionChanged="ListView_ElementInCart_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="+" HorizontalAlignment="Left" Margin="276,95,0,0" VerticalAlignment="Top" Click="Button_Click_4" RenderTransformOrigin="0.5,0.5" Width="36">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.434"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="-" HorizontalAlignment="Left" Margin="344,93,0,0" VerticalAlignment="Top" Click="Button_Click_5" Width="40"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="272,144,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_6"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="344,144,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_7"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="272,197,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_8"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="344,196,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_9"/>
+        <Button Content="vyuctovanie" HorizontalAlignment="Left" Margin="418,0,0,0" VerticalAlignment="Center" Click="Button_Click_10"/>
+        <Button Content="Vyuctovanie tip" HorizontalAlignment="Left" Margin="418,246,0,0" VerticalAlignment="Top" Click="Button_Click_11"/>
+        <Label x:Name="Label_Zobrazovac" Content="Label" HorizontalAlignment="Left" Margin="696,298,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>
