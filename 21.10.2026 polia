@@ -1,0 +1,132 @@
+using System.ComponentModel.Design;
+using System.Net.Mime;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Koľko ste prešli km");
+            //double km =double.Parse( Console.ReadLine());
+            //Console.WriteLine("Aka je spotreba auta");
+            //double spotreba = double. Parse(Console.ReadLine());
+            //Console.WriteLine("Aka je cena benzinu");
+            //double cena = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Kolko ludi je v aute");
+            //double ludia = double.Parse(Console.ReadLine());
+
+
+            //double cenaPaliva = spotreba * cena;
+            //Console.WriteLine("Idete aj spät? (y/n)");
+            //string ano = Console.ReadLine();
+            //if (ano == "y") 
+            //{ 
+            //    double spat = 2 * cenaPaliva; 
+            //}
+
+
+            //Console.WriteLine("Zadajte myto");
+            //double myto = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Zadajte cenu parkovneho");
+            //double park = double.Parse(Console.ReadLine());
+
+
+            //double litre = km * spotreba / 100;
+            //Console.WriteLine("minie sa " + litre+ "Litrov");
+
+
+            //Console.WriteLine("Palivo bude stat " + cenaPaliva + " eur");
+
+            //double podiel = cenaPaliva / ludia;
+            //Console.WriteLine("Kazdy zaplati "+ podiel +" eur");
+
+            //double celok = cenaPaliva  + myto + park;
+            //Console.WriteLine("Celkova cena je" + celok);
+
+
+
+            //Console.WriteLine("Ako sa voláš?");
+            //string meno =  Console.ReadLine();
+            //meno = meno.ToUpper();
+            //Console.WriteLine("Aké je tvoje priezvisko?");
+            //string priezvisko = Console.ReadLine();
+            //Console.WriteLine("Aká je tvoja práca?");
+            //string praca= Console.ReadLine();
+
+            //Console.WriteLine("Ahoj "+meno+ priezvisko);
+
+
+
+            //Console.WriteLine("Napiste svoje telefonne cislo");S
+            //string cislo = Console.ReadLine();
+            //cislo = cislo.Trim();
+            //Console.WriteLine(cislo);
+
+            //ak je vo te chyba, t
+            //Console.WriteLine("Zadajte vetu");
+            //string veta= Console.ReadLine();
+            //if (veta.Contains( "debil"+ "sprostý"+ "kôň" )) 
+            //{
+            //    Console.WriteLine("veta obsahuje nadavky");
+
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("veta nebsahuje nadavky");
+            //}
+
+
+
+            //vypíše iba meno (teda od 0 až po @)
+            //Console.WriteLine("Zadajte email");
+            //string email = Console.ReadLine();
+            //int dlzka = email.IndexOf('@');
+            //string name = email.Substring(0,dlzka);
+            //Console.WriteLine(name);
+
+
+            //int xp1 = 0;
+            //int xp2 = 0;
+            //int xp3 = 0;
+            ////  .... 97 more  vriables?
+
+            //int[] xp = new string[4];
+            //string[] mena = new string [4];
+            //mena[0] = "igor";
+            //mena[2] = "miso";
+            //// [igor]  [  ]  [miso]  [  ]
+            //int dlzka = mena.Length;
+
+
+            //double[] ine;
+            //float[] asasd;
+            //bool[] bb;
+
+
+
+            Console.WriteLine("Zadaj pocet zbrni: ");
+            int ct = int.Parse (Console.ReadLine());
+            string[] zbrane = new string[ct];
+
+
+            string[] a = new string[4];
+            for (int i = 0; 1 < a.Length; i++)
+            {
+                Console.WriteLine((i + 1) + ". nieco: ");
+                a[i] = Console.ReadLine();
+            }
+
+            
+            
+
+ 
+            
+            
+
+
+
+        }
+    }
+}
