@@ -1,0 +1,99 @@
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ako sa volas?");
+            string meno = Console.ReadLine();
+            Console.WriteLine("Koľko kôl chceš odohráť?");
+            int kola = int.Parse(Console.ReadLine());
+            int[] body = new int[kola];
+            int sucet = 0;
+
+            for (int b = 0; b < body.Length; b++)
+            {
+                Console.WriteLine($"Body v {b + 1}. kole:");
+                body[b] = int.Parse(Console.ReadLine());
+                sucet += body[b];
+            }
+
+
+            Console.WriteLine("Ktore kolo chces opravit? ");
+            int kolo = int.Parse(Console.ReadLine());
+            if (kolo >= 1 && kolo <= body.Length)
+            {
+                Console.WriteLine($"Zadaj nový počet bodov:");
+                body[kolo - 1] = int.Parse(Console.ReadLine());
+
+                int novySucet = 0;
+
+                for (int j = 0; j < body.Length; j++)
+                {
+                    novySucet += body[j];
+                }
+
+                double novyPriemer = (double)novySucet / body.Length;
+                Console.WriteLine($"Nový súčet: {novySucet}");
+                Console.WriteLine($"Nový priemer: {novyPriemer}");
+            }
+            else
+            {
+                Console.WriteLine("Neexistuje.");
+
+            }
+
+
+            Console.WriteLine($"Vysledky hraca {meno.ToUpper()}");
+
+            for (int j = 0; j < body.Length; j++)
+            {
+                Console.WriteLine($"Body v {j + 1}. kole: {body[j]} bodov");
+                //sucet += body[j];
+            }
+            double preimer = (double)sucet / body.Length;
+            Console.WriteLine($"Sucet bodov: {sucet}");
+            Console.WriteLine($"Priemer bodov: {preimer}");
+            Console.WriteLine("Ktoré kolo chceš vidieť?");
+            int vybraneKolo = int.Parse(Console.ReadLine());
+
+            if (vybraneKolo >= 1 && vybraneKolo <= body.Length)
+            {
+                Console.WriteLine($"V {vybraneKolo}. kole si získal " + $"{body[vybraneKolo - 1]} bodov.");
+            }
+            else
+            {
+                Console.WriteLine("Neexistuje.");
+
+            }
+
+            int max = body[0];
+            int koloMax = 1;
+
+            for (int j = 1; j < body.Length; j++)
+            {
+                if (body[j] > max)
+                {
+                    max = body[j];
+                    koloMax = j + 1;
+                }
+            }
+
+            Console.WriteLine($"Najviac bodov si získal v {koloMax}.  kole: {max} bodov.");
+
+            int pocet = 0;
+            for (int j = 0; j < body.Length; j++)
+            {
+                if (body[j] >= 200)
+                {
+                    pocet++;
+                }
+            }
+            Console.WriteLine($"Pocet kol, v ktorych si ziskal viac ako 200 bodov: {pocet}.");
+
+           
+        }
+    }
+}
+
+
