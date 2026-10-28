@@ -1,0 +1,63 @@
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            //int[] body = { 10, 25, 5, 40, 15 };
+            //int sucet = 0;
+            //int max = body[0];
+            //for (int i = 0; i < body.Length; i++) 
+            //{
+            //    if (body[i] > max)
+            //    {
+            //        max=body[i];
+            //    }
+            //    Console.WriteLine(body[i]);
+            //    sucet = sucet + body[i];
+            //}
+            //Console.WriteLine(sucet);
+
+
+
+            //for (int i = 0; i <= 33; i++)
+            //{
+            //    if (i % 3== 0)
+            //    {
+            //        Console.WriteLine(i % 3 == 0);
+            //    }
+            //}
+
+
+
+            //for (int i = 100; i > 19; i-=5)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+
+
+
+
+            List<int> odmeny = new List<int> { 50, 100, 75, 200 };
+            for (int i = 0; i < odmeny.Count; i++)
+                
+            {
+                Console.WriteLine(odmeny[i]);
+                
+            }
+            
+            Console.WriteLine("Ziskal si odmien: " + odmeny.Count + ".");
+            Console.WriteLine("Ziskal si minci: "+ odmeny.Sum() + ".");
+            odmeny.RemoveAt(1);
+            Console.WriteLine(odmeny.Sum());
+            Console.WriteLine("Napis vysku odmeny: ");
+            odmeny.Add (int.Parse (Console.ReadLine ()));
+            Console.WriteLine("max: " + odmeny.Max());
+
+
+        }
+    }
+}
