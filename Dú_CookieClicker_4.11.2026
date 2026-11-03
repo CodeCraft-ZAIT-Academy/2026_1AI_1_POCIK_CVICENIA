@@ -1,0 +1,194 @@
+<Window x:Class="CookieClicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cookie Clicker"
+        Height="550"
+        Width="850"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFF7F7F7">
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1.2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ĽAVÁ STRANA -->
+        <StackPanel Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+            <TextBlock Text="Cookie Clocker"
+                       FontSize="32"
+                       FontWeight="Bold"
+                       Foreground="Black"
+                       />
+
+            <TextBlock x:Name="Label_Cookies"
+                       Text="Sušienok:  0"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"/>
+
+            <TextBlock x:Name="Label_Click"
+                       Text="Cookies za kliknutie: 1"
+                       FontSize="17"
+                       Margin="0,10,0,25"
+                       HorizontalAlignment="Center"/>
+            <Button Content="🍪"
+                    FontSize="90"
+                    Width="190"
+                    Height="190"
+                    Background="#FF5D3C09"
+                    BorderBrush="#A66B32"
+                    BorderThickness="4"
+                    Cursor="Hand"
+                    Click="Button_Cookie_Click"/>
+
+        </StackPanel>
+
+        <!-- PRAVÁ STRANA -->
+        <StackPanel Grid.Column="1"
+                    Margin="25,20,0,20">
+
+            <TextBlock Text="OBCHOD"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Foreground="#754321"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,25"/>
+
+            <!-- VYLEPŠENIE 1 -->
+            <Border Background="#FF5D3904"
+                    CornerRadius="12"
+                    Padding="15"
+                    Margin="0,0,0,15">
+
+                <StackPanel>
+                    <TextBlock Text="+5 sušienok za klik"
+                               FontSize="17"
+                               FontWeight="Bold"/>
+
+                    <TextBlock x:Name="Label_Cena1"
+                               Text="Cena: 50"
+                               Margin="0,8,0,0"/>
+
+                    <TextBlock x:Name="Label_Pocet1"
+                               Text="Kupené: 0"
+                               Margin="0,5,0,10"/>
+
+                    <Button Content="KÚPIŤ"
+                            Height="35"
+                            Background="#B87939"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="Button_Vylepsenie1_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- VYLEPŠENIE 2 -->
+            <Border Background="#FF633D06"
+                    CornerRadius="12"
+                    Padding="15">
+
+                <StackPanel>
+                    <TextBlock Text="+10 sušienok za klik"
+                               FontSize="17"
+                               FontWeight="Bold"/>
+
+                    <TextBlock x:Name="Label_Cena2"
+                               Text="Cena: 200"
+                               Margin="0,8,0,0"/>
+
+                    <TextBlock x:Name="Label_Pocet2"
+                               Text="Kupené:  0"
+                               Margin="0,5,0,10"/>
+
+                    <Button Content="KÚPIŤ"
+                            Height="35"
+                            Background="#B87939"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="Button_Vylepsenie2_Click"/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </Grid>
+</Window>
+
+
+
+
+
+
+
+using System;
+using System.Windows;
+
+namespace CookieClicker
+{
+    public partial class MainWindow : Window
+    {
+        int cookies = 0;
+        int cookiesZaKlik = 1;
+        int cenaVylepsenie1 = 50;
+        int cenaVylepsenie2 = 200;
+        int vylepsenie1 = 0;
+        int vylepsenie2 = 0;
+        public MainWindow()
+        {
+            InitializeComponent();
+            Aktualizuj();
+        }
+
+        private void Button_Cookie_Click(object sender, RoutedEventArgs e)
+        {
+            cookies += cookiesZaKlik;
+            Aktualizuj();
+        }
+        private void Button_Vylepsenie1_Click(object sender, RoutedEventArgs e)
+        {
+            if (cookies >= cenaVylepsenie1)
+            {
+                cookies -= cenaVylepsenie1;
+                cookiesZaKlik += 5;
+                vylepsenie1++;
+                cenaVylepsenie1 = (int)Math.Ceiling(cenaVylepsenie1 * 1.2);
+            }
+            else
+            {
+                MessageBox.Show("Ešte potrebuješ " + (cenaVylepsenie1 - cookies) + " sušienok.");
+            }
+            Aktualizuj();
+        }
+        private void Button_Vylepsenie2_Click(object sender, RoutedEventArgs e)
+        {
+            if (cookies >= cenaVylepsenie2)
+            {
+                cookies -= cenaVylepsenie2;
+
+                cookiesZaKlik += 10;
+                vylepsenie2++;
+
+                cenaVylepsenie2 = (int)Math.Ceiling(cenaVylepsenie2 * 1.2);
+            }
+            else
+            {
+                MessageBox.Show("ešte potrebujeeš " + (cenaVylepsenie2 - cookies) + " sušuenok.");
+            }
+
+            Aktualizuj();
+        }
+        private void Aktualizuj()
+        {
+            Label_Cookies.Text = "Sušienky: " + cookies;
+            Label_Click.Text = "Sušienky za kliknutie: " + cookiesZaKlik;
+            Label_Cena1.Text = "Cena: " + cenaVylepsenie1;
+            Label_Cena2.Text = "Cena: " + cenaVylepsenie2;
+            Label_Pocet1.Text = "Kúpené: " + vylepsenie1 + " krat";
+            Label_Pocet2.Text = "Kúpené: " + vylepsenie2 + " krat";
+        }
+    }
+}
+
