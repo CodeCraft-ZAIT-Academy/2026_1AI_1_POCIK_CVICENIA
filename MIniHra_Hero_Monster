@@ -1,0 +1,164 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CviceniaBattleSimulator
+{
+    public class Monster
+    {
+        public int Health { get; set; }
+        public int Demage { get; set; }
+
+        public Monster(int health, int demage)
+        {
+            Health = health;
+            Demage = demage;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CviceniaBattleSimulator
+{
+    public class Hero
+    {
+        public int Health { get; set; }
+        public int Demage { get; set; }
+
+        public Hero(int health, int demage)
+        {
+            Health = health;
+            Demage = demage;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace CviceniaBattleSimulator
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+
+        public Hero MyHero { get; set; }
+        public Monster MyMonster { get; set; }
+        public MainWindow()
+        {
+            InitializeComponent();
+            MyHero = new Hero(100,20);
+            MyMonster = new  Monster(200, 40);
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Attack_Hp.Content= MyHero.Health.ToString();
+           MyHero .Health -= 10;
+           if (MyHero .Health <= -10)
+            {
+
+                Button_Attack_Hp.Content = "My Hero is dead";
+                Button_Attack_Hp.IsEnabled = false;
+                ProgressBar_Hero.Value = MyMonster.Health;
+
+            }
+            
+        }
+
+     
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Button_Monster.Content = MyMonster.Health.ToString();
+            MyMonster .Health -= 20;
+            if (MyMonster .Health <= -20)
+            {
+
+                Button_Monster.Content = "Monster is dead";
+                Button_Monster.IsEnabled = false;
+                ProgressBar_Hero.Value = MyMonster.Health;
+
+            }
+        }
+
+        private void ProgressBar_Hero_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Window x:Class="CviceniaBattleSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CviceniaBattleSimulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Button_Attack_Hp" Content="Attack" HorizontalAlignment="Left" Margin="77,262,0,0" VerticalAlignment="Top" Height="50" Width="117" Background="#FFF90000" Click="Button_Click"/>
+        <Button x:Name="Button_Monster" Content="Button" HorizontalAlignment="Left" Margin="259,262,0,0" VerticalAlignment="Top" Height="50" Width="107" Click="Button_Click_1"/>
+        <ProgressBar x:Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="40" Margin="180,51,0,0" VerticalAlignment="Top" Width="112" ValueChanged="ProgressBar_Hero_ValueChanged" Value="100"/>
+
+    </Grid>
+</Window>
+
+
+
