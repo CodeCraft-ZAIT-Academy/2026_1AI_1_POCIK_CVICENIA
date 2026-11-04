@@ -1,0 +1,45 @@
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace cvicenia_triedy
+{
+    public class Game
+    {
+        public string GameName { get; set; }
+        public bool IsForAdult   { get; set; }
+        public int PriceOfGame { get; set; }    
+
+
+    }
+}
+
+
+
+
+
+
+namespace cvicenia_triedy
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Game game1 = new Game();
+            game1.GameName = "The Witcher 3";
+            game1.IsForAdult = true;
+            game1.PriceOfGame = 39;
+
+
+            Game game2 = new Game();
+            game2.GameName = "Minecraft";
+            game2.IsForAdult = false;
+            game2.PriceOfGame = 26;
+
+
+           int sum= game1.PriceOfGame + game2.PriceOfGame;
+            Console.WriteLine(sum);
+        }
+    }
+}
