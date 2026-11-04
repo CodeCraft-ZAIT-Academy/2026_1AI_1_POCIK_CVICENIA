@@ -1,0 +1,26 @@
+namespace ConsoleApp4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            List<int> cisla = new List<int>();
+            for (int i = 0; i < 10; i++)
+            {
+                cisla.Add(random.Next(0, 100));
+
+            }
+
+
+            int sucet = cisla[0] + cisla[1] + cisla[2] + cisla[3] + cisla[4] + cisla[5] + cisla[6] + cisla[7] + cisla[8] + cisla[9];
+            foreach (int item  in cisla)
+            {
+               sucet += item;
+
+            }
+            Console.WriteLine(sucet);
+
+        }
+    }
+}
