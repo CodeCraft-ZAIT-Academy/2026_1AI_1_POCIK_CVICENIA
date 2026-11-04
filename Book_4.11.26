@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace knihy
+{
+    internal class Book
+    {
+        public string BookName { get; set; }
+        public bool IsForAdult { get; set; }
+        public int PriceOfBook { get; set; }
+    }
+}
+
+
+
+
+
+
+namespace knihy
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<Book> books = new List<Book>();
+
+            Book book1 = new Book();
+            book1.BookName = "The Witcher 3";
+            book1.IsForAdult = true;
+            book1.PriceOfBook = 39;
+
+
+            Book book2 = new Book();
+            book2.BookName = "Minecraft";
+            book2.IsForAdult = false;
+            book2.PriceOfBook = 26;
+
+            Book book3 = new Book();
+            book3.BookName = "Capitan";
+            book3.IsForAdult = false;
+            book3.PriceOfBook = 15;
+
+
+            books.Add(book1);
+            books.Add( book2);
+            books.Add( book3 );
+            
+
+            Console.WriteLine("Kolko mas rkov");
+            int age = int.Parse(Console.ReadLine());
+            if (age >= 18)
+            {
+                //Console.WriteLine($"Toto su k nihy pre teba: {book.IsForAdult}");
+            }
+
+
+
+            foreach ( var book in books )
+            {
+                Console.WriteLine( $"Book Name:  {book.BookName}, Is For Adult: {book.IsForAdult}, Price: {book.PriceOfBook}");
+               
+            }
+
+
+
+            //Console.WriteLine("Kolko mas rkov");
+            //int age =  int.Parse(Console.ReadLine());
+            //if ( age >= 18)
+            //{
+            //    Console.WriteLine($"Toto su k nihy pre teba: {book.IsForAdult}");
+            //}
+
+
+        }
+    }
+}
