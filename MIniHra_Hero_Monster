@@ -55,6 +55,7 @@ namespace CviceniaBattleSimulator
 
 
 
+
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -79,45 +80,50 @@ namespace CviceniaBattleSimulator
         public MainWindow()
         {
             InitializeComponent();
-            MyHero = new Hero(100,20);
-            MyMonster = new  Monster(200, 40);
-            
+            MyHero = new Hero(100, 20);
+            MyMonster = new Monster(200, 40);
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button_Attack_Hp.Content= MyHero.Health.ToString();
-           MyHero .Health -= 10;
-           if (MyHero .Health <= -10)
+            Button_Attack_Hp.Content = MyMonster.Health.ToString();
+            MyMonster.Health -= 10;
+            if (MyMonster.Health <= -10)
             {
 
-                Button_Attack_Hp.Content = "My Hero is dead";
+                Button_Attack_Hp.Content = "Hero is dead";
                 Button_Attack_Hp.IsEnabled = false;
                 ProgressBar_Hero.Value = MyMonster.Health;
 
             }
-            
+
         }
 
-     
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Button_Monster.Content = MyMonster.Health.ToString();
-            MyMonster .Health -= 20;
-            if (MyMonster .Health <= -20)
+            Button_Monster.Content = MyHero.Health.ToString();
+            MyHero.Health -= 20;
+            if (MyHero.Health <= -20)
             {
 
                 Button_Monster.Content = "Monster is dead";
                 Button_Monster.IsEnabled = false;
-                ProgressBar_Hero.Value = MyMonster.Health;
+                ProgressBar_Monster.Value = MyHero.Health;
 
             }
         }
 
         private void ProgressBar_Hero_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            
+
+        }
+
+        private void ProgressBar_Monster_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
         }
     }
 }
@@ -153,12 +159,12 @@ namespace CviceniaBattleSimulator
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="Button_Attack_Hp" Content="Attack" HorizontalAlignment="Left" Margin="77,262,0,0" VerticalAlignment="Top" Height="50" Width="117" Background="#FFF90000" Click="Button_Click"/>
-        <Button x:Name="Button_Monster" Content="Button" HorizontalAlignment="Left" Margin="259,262,0,0" VerticalAlignment="Top" Height="50" Width="107" Click="Button_Click_1"/>
-        <ProgressBar x:Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="40" Margin="180,51,0,0" VerticalAlignment="Top" Width="112" ValueChanged="ProgressBar_Hero_ValueChanged" Value="100"/>
+        <Button x:Name="Button_Attack_Hp" Content="Attack Hero" HorizontalAlignment="Left" Margin="166,258,0,0" VerticalAlignment="Top" Height="50" Width="116" Background="#FF00FFED" Click="Button_Click"/>
+        <Button x:Name="Button_Monster" Content="Attack Monster" HorizontalAlignment="Left" Margin="534,258,0,0" VerticalAlignment="Top" Height="50" Width="106" Click="Button_Click_1" Background="#FFFF0F0F"/>
+        <ProgressBar x:Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="40" Margin="168,50,0,0" VerticalAlignment="Top" Width="112" ValueChanged="ProgressBar_Hero_ValueChanged" Value="100"/>
+        <ProgressBar x:Name="ProgressBar_Monster" HorizontalAlignment="Left" Height="40" Margin="531,50,0,0" VerticalAlignment="Top" Width="112" ValueChanged="ProgressBar_Monster_ValueChanged" Value="200" Maximum="200"/>
 
     </Grid>
 </Window>
-
 
 
