@@ -1,0 +1,16 @@
+﻿<Window x:Class="CviceniaBattleSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CviceniaBattleSimulator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Button_Attack_Hp" Content="Attack Hero" HorizontalAlignment="Left" Margin="166,258,0,0" VerticalAlignment="Top" Height="50" Width="116" Background="#FF00FFED" Click="Button_Click"/>
+        <Button x:Name="Button_Monster" Content="Attack Monster" HorizontalAlignment="Left" Margin="534,258,0,0" VerticalAlignment="Top" Height="50" Width="106" Click="Button_Click_1" Background="#FFFF0F0F"/>
+        <ProgressBar x:Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="40" Margin="168,50,0,0" VerticalAlignment="Top" Width="112" ValueChanged="ProgressBar_Hero_ValueChanged" Value="100"/>
+        <ProgressBar x:Name="ProgressBar_Monster" HorizontalAlignment="Left" Height="40" Margin="531,50,0,0" VerticalAlignment="Top" Width="112" ValueChanged="ProgressBar_Monster_ValueChanged" Value="200" Maximum="200"/>
+
+    </Grid>
+</Window>
