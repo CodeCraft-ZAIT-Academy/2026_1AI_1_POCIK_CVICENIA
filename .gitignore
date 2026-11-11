@@ -58,3 +58,8 @@ nunit-*.xml
 /.vs
 /.gitignore
 /WpfApp9.slnx
+
+# CodeCraft: Visual Studio local/generated files
+.vs/
+*.user
+*.suo
