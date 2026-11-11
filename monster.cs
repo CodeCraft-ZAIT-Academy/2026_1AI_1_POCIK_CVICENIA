@@ -11,6 +11,9 @@ namespace CviceniaBattleSimulator
 
         public Monster(int health, int demage)
         {
+
+
+
             Health = health;
             Demage = demage;
         }
