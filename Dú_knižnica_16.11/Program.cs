@@ -21,14 +21,14 @@ namespace Dú_knižnica_16._11
 
             while (true)
             {
-                Console.WriteLine("\n--- ZOZNAM KNÍH V KNIŽNICI ---");
+                Console.WriteLine("Knižnica");
 
                 foreach (var Item in kniznica)
                 {
                     Console.WriteLine($"Názov: {Item.Nazov}, Žáner: {Item.Zaner}, Veková kategória: {Item.VekovaKategoria}");
                 }
 
-                Console.WriteLine("\nZadajte názov knihy (alebo exit pre ukončenie):");
+                Console.WriteLine("Zadajte názov knihy/exit:");
                 string knihaIndex = Console.ReadLine();
 
                 if (knihaIndex == "exit")
@@ -39,17 +39,17 @@ namespace Dú_knižnica_16._11
                 Console.WriteLine("Zadaj žáner knihy:");
                 string zanerIndex = Console.ReadLine();
 
-                Console.WriteLine("Zadaj vekovú kategóriu (3, 8, 15, 18):");
+                Console.WriteLine("Zadaj vekovú kategóriu 3, 8, 15, 18:");
                 int vek = int.Parse(Console.ReadLine());
 
                 if (vek == 3 || vek == 8 || vek == 15 || vek == 18)
                 {
                     kniznica.Add(new Kniha(knihaIndex, zanerIndex, vek));
-                    Console.WriteLine("Kniha bola úspešne pridaná!");
+                    Console.WriteLine("Kniha bola úspešne pridaná");
                 }
                 else
                 {
-                    Console.WriteLine("Zlá veková kategória. Skús znova.");
+                    Console.WriteLine("Zle zadaná veková kategória. Skús znova.");
                 }
             }
         }
