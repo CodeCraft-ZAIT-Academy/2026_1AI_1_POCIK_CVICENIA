@@ -4,17 +4,17 @@ using System.Text;
 
 namespace Cvicenie_pokemon
 {
-    internal class Enemy
+    public class Enemy
     {
-        public int HP { get; set; } 
-        public int DMG { get; set; } 
-        public int MaxHp { get; set; }
+        public int Health { get; set; } 
+        public int Demage { get; set; } 
+        public int MaxHP { get; set; }
 
         public Enemy(int hP, int dMG, int maxHp)
         {
-            HP = hP;
-            DMG = dMG;
-            MaxHp = maxHp;
+            Health = hP;
+            Demage = dMG;
+            MaxHP = maxHp;
         }
     }
 

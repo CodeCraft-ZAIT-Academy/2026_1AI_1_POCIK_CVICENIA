@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button x:Name="MediumAttack" Content="Medium Attack" HorizontalAlignment="Left" Height="28" Margin="189,299,0,0" VerticalAlignment="Top" Width="132" Click="MediumAttack_Click"/>
+        <Button x:Name="HeavyAttack" Content="Heavy Attack" HorizontalAlignment="Left" Height="28" Margin="109,345,0,0" VerticalAlignment="Top" Width="132" Click="HeavyAttack_Click"/>
+        <Button x:Name="LightAttack" Content="Light Attack" HorizontalAlignment="Left" Height="28" Margin="43,299,0,0" VerticalAlignment="Top" Width="132" Click="LightAttack_Click"/>
+        <ProgressBar x:Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="41" Margin="43,161,0,0" VerticalAlignment="Top" Width="278" ValueChanged="ProgressBar_Hero_ValueChanged" Maximum="200"/>
+        <ProgressBar x:Name="ProgressBar_Hero_Mana" HorizontalAlignment="Left" Height="41" Margin="43,217,0,0" VerticalAlignment="Top" Width="278" ValueChanged="ProgressBar_Hero_ValueChanged" Maximum="200" Foreground="#FF0654B0"/>
+        <Button x:Name="Button_Sleep" Content="Spanok" HorizontalAlignment="Left" Margin="327,345,0,0" VerticalAlignment="Top" Width="116" Height="28" Click="Button_Sleep_Click"/>
+        <ProgressBar x:Name="ProgressBar_Enemy" HorizontalAlignment="Left" Height="41" Margin="466,161,0,0" VerticalAlignment="Top" Width="250" ValueChanged="ProgressBar_Enemy_ValueChanged" Background="#FFE9E9E9" Foreground="#FFEB4621" Maximum="50"/>
+        <Label HorizontalAlignment="Left" Margin="338,169,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label" Content="Label" HorizontalAlignment="Left" Margin="338,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label_Hero" Content="Label" HorizontalAlignment="Left" Margin="338,164,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="738,169,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
