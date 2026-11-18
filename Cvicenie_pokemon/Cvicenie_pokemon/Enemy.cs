@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.XPath;
 
 namespace Cvicenie_pokemon
 {
@@ -16,6 +17,16 @@ namespace Cvicenie_pokemon
             Demage = dMG;
             MaxHP = maxHp;
         }
+
+        public void Revive()
+        {
+            MaxHP *= 2;
+            Health = MaxHP;
+            Demage *= 2;
+            
+        }
+
+
     }
 
 }

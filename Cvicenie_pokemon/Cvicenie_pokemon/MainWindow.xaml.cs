@@ -25,8 +25,13 @@ namespace Cvicenie_pokemon
             ProgressBar_Enemy.Maximum = MyEnemy.MaxHP;
             ProgressBar_Hero.Maximum = MyHero.MaxHp;
             ProgressBar_Hero_Mana.Maximum = 100;
+            ProgressBar_Enemy.Maximum = 50;
             UpdateUI();
         }
+
+
+        
+
 
         public void UpdateUI()
         {
@@ -38,9 +43,23 @@ namespace Cvicenie_pokemon
             if(MyEnemy.Health <= 0)
             {
                 MessageBox.Show("Vyhral si");
+                MyEnemy.Revive();
+                MyHero.XP += 50;
+
             }
             ProgressBar_Hero.Value = MyHero.HP;
             ProgressBar_Hero_Mana.Value=MyHero.Mana;
+            ProgressBar_Enemy.Value = MyEnemy.Health;
+
+
+            
+            ProgressBar_XP.Value = MyHero.XP;
+            Label_HeroXP.Content = MyHero.XP;
+
+            if(MyHero.XP >= 100)
+            {
+                MyHero.ReviveHero();
+            }
         }
 
         private void LightAttack_Click(object sender, RoutedEventArgs e)
@@ -59,15 +78,21 @@ namespace Cvicenie_pokemon
                LightAttack.IsEnabled = false;
             }
 
+            //if (MyEnemy.Health <= 0)
+            //{
+            //    MyHero.XP += 50;
+            //    ProgressBar_XP.Value = MyHero.XP;
+            //}
+
 
 
         }
 
         private void MediumAttack_Click(object sender, RoutedEventArgs e)
         {
-            MyEnemy.Health -= 10;
+            MyEnemy.Health -= 15;
 
-            MyHero.HP -= MyEnemy.Demage * 2;
+            MyHero.HP -= MyEnemy.Demage ;
             MyEnemy.Demage -= MyHero.DMG;
             MyHero.Mana -= 35;
 
@@ -80,13 +105,19 @@ namespace Cvicenie_pokemon
                 MediumAttack.IsEnabled = false;
             }
 
+            //if (MyEnemy.Health <= 0)
+            //{
+            //    MyHero.XP += 50;
+            //    ProgressBar_XP.Value = MyHero.XP;
+            //}
+
         }
 
         private void HeavyAttack_Click(object sender, RoutedEventArgs e)
         {
-            MyEnemy.Health -= 15;
+            MyEnemy.Health -= 25;
 
-            MyHero.HP -= MyEnemy.Demage * 3;
+            MyHero.HP -= MyEnemy.Demage;
             MyEnemy.Demage -= MyHero.DMG;
             MyHero.Mana -= 65;
 
@@ -98,6 +129,12 @@ namespace Cvicenie_pokemon
                 MessageBox.Show("Nemas dostatok many");
                 HeavyAttack.IsEnabled = false;
             }
+
+            //if (MyEnemy.Health <= 0)
+            //{
+            //    MyHero.XP += 50;
+            //    ProgressBar_XP.Value = MyHero.XP;
+            //}
         }
       
 
@@ -120,6 +157,22 @@ namespace Cvicenie_pokemon
         private void ProgressBar_Enemy_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             ProgressBar_Enemy.Value = (double)e.NewValue;
+        }
+
+        private void ProgressBar_XP_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ProgressBar_XP.Value = (double)e.NewValue;
+            
+        }
+
+        private void Button_Kocka_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+
+            }
+
+
         }
     }
 }

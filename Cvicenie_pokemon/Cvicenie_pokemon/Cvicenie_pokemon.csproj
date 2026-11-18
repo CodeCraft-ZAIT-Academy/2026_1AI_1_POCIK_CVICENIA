@@ -8,4 +8,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="img\Pokemon_Enemy.png" />
+    <None Remove="img\Pokemon_Hero.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="img\Pokemon_Enemy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Pokemon_Hero.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
