@@ -8,21 +8,30 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="#FF81D5F7">
         <Button x:Name="MediumAttack" Content="Medium Attack" HorizontalAlignment="Left" Height="28" Margin="182,345,0,0" VerticalAlignment="Top" Width="132" Click="MediumAttack_Click"/>
-        <Button x:Name="HeavyAttack" Content="Heavy Attack" HorizontalAlignment="Left" Height="28" Margin="109,378,0,0" VerticalAlignment="Top" Width="132" Click="HeavyAttack_Click"/>
+        <Button x:Name="HeavyAttack" Content="Heavy Attack" HorizontalAlignment="Left" Height="28" Margin="43,373,0,0" VerticalAlignment="Top" Width="132" Click="HeavyAttack_Click"/>
         <Button x:Name="LightAttack" Content="Light Attack" HorizontalAlignment="Left" Height="28" Margin="43,345,0,0" VerticalAlignment="Top" Width="132" Click="LightAttack_Click"/>
         <ProgressBar x:Name="ProgressBar_Hero" HorizontalAlignment="Left" Height="41" Margin="43,161,0,0" VerticalAlignment="Top" Width="278" ValueChanged="ProgressBar_Hero_ValueChanged" Maximum="200"/>
-        <ProgressBar x:Name="ProgressBar_Hero_Mana" HorizontalAlignment="Left" Height="41" Margin="43,217,0,0" VerticalAlignment="Top" Width="278" ValueChanged="ProgressBar_Hero_ValueChanged" Foreground="#FF0654B0"/>
-        <Button x:Name="Button_Sleep" Content="Spanok" HorizontalAlignment="Left" Margin="328,378,0,0" VerticalAlignment="Top" Width="116" Height="28" Click="Button_Sleep_Click"/>
+        <ProgressBar x:Name="ProgressBar_Hero_Mana" HorizontalAlignment="Left" Height="41" Margin="43,217,0,0" VerticalAlignment="Top" Width="278" ValueChanged="ProgressBar_Hero_ValueChanged" Foreground="#FF0654B0" Maximum="100"/>
+        <Button x:Name="Button_Sleep" Content="Spanok" HorizontalAlignment="Left" Margin="182,373,0,0" VerticalAlignment="Top" Width="132" Height="28" Click="Button_Sleep_Click"/>
         <ProgressBar x:Name="ProgressBar_Enemy" HorizontalAlignment="Left" Height="41" Margin="466,161,0,0" VerticalAlignment="Top" Width="250" ValueChanged="ProgressBar_Enemy_ValueChanged" Background="#FFE9E9E9" Foreground="#FFEB4621" Maximum="50"/>
-        <Label HorizontalAlignment="Left" Margin="338,169,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label" Content="Label" HorizontalAlignment="Left" Margin="338,225,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="Label_Hero" Content="Label" HorizontalAlignment="Left" Margin="338,164,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="738,169,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="Label_Hero" Content="HP: 0 / 0" HorizontalAlignment="Left" Margin="330,168,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+        <Label x:Name="Label_Hero_Mana" Content="Mana: 0 / 0" HorizontalAlignment="Left" Margin="330,224,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+        <Label x:Name="Label_Hero_XP" Content="XP: 0 / 100" HorizontalAlignment="Left" Margin="330,280,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+        <Label x:Name="Label_Hero_DMG" Content="DMG: 0" HorizontalAlignment="Left" Margin="330,308,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+
+        <Label x:Name="Label_Enemy_HP" Content="Enemy HP: 0 / 0" HorizontalAlignment="Left" Margin="466,207,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+        <Label x:Name="Label_Enemy_DMG" Content="Enemy DMG: 0" HorizontalAlignment="Left" Margin="590,207,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+
         <Image Margin="523,10,125,280" Source="/img/Pokemon_Enemy.png" Stretch="Fill"/>
         <Image Margin="43,10,590,280" Source="/img/Pokemon_Hero.png" Stretch="Fill"/>
-        <ProgressBar x:Name="ProgressBar_XP" HorizontalAlignment="Left" Height="43" Margin="43,271,0,0" VerticalAlignment="Top" Width="278" Foreground="#FFE0FD0A" ValueChanged="ProgressBar_XP_ValueChanged"/>
-        <Label x:Name="Label_HeroXP" Content="Label" HorizontalAlignment="Left" Margin="343,280,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Button_Kocka" Content="Hod kockou" HorizontalAlignment="Left" Margin="636,257,0,0" VerticalAlignment="Top" Height="102" Width="102" Background="#FFF70808" Click="Button_Kocka_Click"/>
+        <ProgressBar x:Name="ProgressBar_XP" HorizontalAlignment="Left" Height="43" Margin="43,271,0,0" VerticalAlignment="Top" Width="278" Foreground="#FFE0FD0A" ValueChanged="ProgressBar_XP_ValueChanged" Maximum="100"/>
+        <Button x:Name="Button_Kocka" Content="Hod kockou" HorizontalAlignment="Left" Margin="466,299,0,0" VerticalAlignment="Top" Height="102" Width="102" Background="#FFF70808" Click="Button_Kocka_Click"/>
 
+        <StackPanel x:Name="LevelUpPanel" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="466,238,0,0" Visibility="Collapsed">
+            <Button x:Name="Btn_UpgradeDMG" Content="Viac DMG" Width="90" Height="28" Margin="0,0,6,0" Click="Btn_UpgradeDMG_Click"/>
+            <Button x:Name="Btn_UpgradeHP" Content="Viac HP" Width="90" Height="28" Margin="0,0,6,0" Click="Btn_UpgradeHP_Click"/>
+            <Button x:Name="Btn_UpgradeMana" Content="Viac Many" Width="90" Height="28" Click="Btn_UpgradeMana_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
